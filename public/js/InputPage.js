@@ -19,7 +19,7 @@ weatherMessages = {
     onClickLodgingHeading: "Recommended Lodging",
     onClickAttractionsHeading: "Recommended Attractions",
 
-}
+};
 
     //Variables for input values
     var TurbineSite = $("#turbineSite");
@@ -41,12 +41,12 @@ weatherMessages = {
             startTime: StartTime.val(),
             endTime: EndTime.val(),
             date: DateVal.val()
-        }
+        };
 
-        var startTemp = new Date("August 23, 2010 " + crewplan.startTime);
-        startTemp = startTemp.getTime();
-        var endTemp = new Date("August 23, 2010 " + crewplan.endTime);
-        endTemp = endTemp.getTime();
+        // var startTemp = new Date("August 23, 2010 " + crewplan.startTime);
+        // startTemp = startTemp.getTime();
+        // var endTemp = new Date("August 23, 2010 " + crewplan.endTime);
+        // endTemp = endTemp.getTime();
 
         if (crewplan.turbineNumber === null){
             alert('Choose turbine site!');
@@ -60,12 +60,12 @@ weatherMessages = {
         } else if(crewplan.endTime === null){
             alert('Choose end time!');
             return;
-        } else if(startTemp >= endTemp){
-            alert('End time is earlier or the same as the start time!');
-            return;
-        // } else if(crewplan.startTime >= crewplan.endTime){
+        // } else if(startTemp >= endTemp){
         //     alert('End time is earlier or the same as the start time!');
         //     return;
+        } else if(crewplan.startTime >= crewplan.endTime){
+            alert('End time is earlier or the same as the start time!');
+            return;
         } else if(crewplan.date === ''){
             alert('Choose date!');
             return;
@@ -73,7 +73,7 @@ weatherMessages = {
 
         //Make ajax call to post to the database
         $.post("/api/crewPlan", crewplan);
-        //clearInputFields();
+        clearInputFields();
     }
 
     //Helper function to clear input fields after they submit
@@ -87,7 +87,7 @@ weatherMessages = {
 
     $("#date").datepicker({minDate: 0 });
  
-})
+});
 
 
 // ###########################
