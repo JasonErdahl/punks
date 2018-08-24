@@ -7,44 +7,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Timetable.js demo</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" -->
+    <link rel="stylesheet" href="styles/InputPage.css">
 </head>
 
 <body>
 
     <div class="hero-unit">
-        <h1>Input Page</h1>
+        <h1>Scheduler</h1>
     </div>
 
     <form>
-        <div class="form-group">
-            <label for="TurbineSite">Turbine Site</label>
-            <input type="text" class="form-control" id="turbineSite">
-        </div>
-        <div class="form-group">
-            <label for="CrewName">Crew Name</label>
-            <input type="text" class="form-control" id="crewName">
-        </div>
-        <div class="form-group">
-            <label for="startTime">Start Time</label>
-            <input type="text" class="form-control" id="startTime">
-        </div>
-        <div class="form-group">
-            <label for="endTime">End Time</label>
-            <input type="text" class="form-control" id="endTime">
-        </div>
-        <div class="form-group">
-            <label for="CrewName">Date</label>
-            <input type="text" class="form-control" id="date">
-        </div>
-
-        <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+        <ul class="inputPageUL">
+            <li class="form-group">
+                <label for="TurbineSite">Turbine Site</label>
+                <!-- input type="text" class="form-control" id="turbineSite" -->
+                <select name="turbineSite" id="turbineSite" class="form-control">
+                    <option selected disabled>Choose Site</option>
+                    <option value="turbine1">Turbine 1</option>
+                    <option value="turbine2">Turbine 2</option>
+                    <option value="turbine3">Turbine 3</option>
+                    <option value="turbine4">Turbine 4</option>
+                    <option value="turbine5">Turbine 5</option>
+                    <option value="turbine6">Turbine 6</option>
+                    <option value="turbine7">Turbine 7</option>
+                    <option value="turbine8">Turbine 8</option>
+                    <option value="turbine9">Turbine 9</option>
+                    <option value="turbine10">Turbine 10</option>
+                </select>
+            </li>
+            <li class="form-group">
+                <label for="CrewName">Crew Name</label>
+                <!-- input type="text" class="form-control" id="crewName" -->
+                <select name="crewName" id="crewName" class="form-control">
+                    <option selected disabled>Choose Crew</option>
+                    <option value="offload">Offload</option>
+                    <option value="baseMid">Base Mid</option>
+                    <option value="grout">Grout</option>
+                    <option value="nacellePrep">Nacelle Prep</option>
+                    <option value="topOut">Top Out</option>
+                    <option value="mcc">MCC</option>
+                    <option value="clean">Clean</option>
+                    <option value="towerWiringSUB">Tower Wiring(SUB)</option>
+                    <option value="torquingCrew">Torquing Crew</option>
+                    <option value="bladeRoll">Blade Roll</option>
+                </select>
+            </li>
+            <li class="form-group">
+                <label for="startTime">Start Time</label>
+                <!-- input type="text" class="form-control" id="startTime" -->
+                <select name="crewName" id="startTime" class="form-control">
+                    <option selected disabled>Choose Time</option>
+                    <option value="1:00">1:00</option>
+                    <option value="1:30">1:30</option>
+                    <option value="2:00">2:00</option>
+                    <option value="2:30">2:30</option>
+                    <option value="3:00">3:00</option>
+                    <option value="3:30">3:30</option>
+                    <option value="4:00">4:00</option>
+                    <option value="4:30">4:30</option>
+                    <option value="5:00">5:00</option>
+                    <option value="5:30">5:30</option>
+                    <option value="6:00">6:00</option>
+                    <option value="6:30">6:30</option>
+                    <option value="7:00">7:00</option>
+                    <option value="7:30">7:30</option>
+                    <option value="8:00">8:00</option>
+                    <option value="8:30">8:30</option>
+                    <option value="9:00">9:00</option>
+                    <option value="9:30">9:30</option>
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="13:00">13:00</option>
+                    <option value="13:30">13:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="16:00">16:00</option>
+                    <option value="16:30">16:30</option>
+                    <option value="17:00">17:00</option>
+                    <option value="17:30">17:30</option>
+                    <option value="18:00">18:00</option>
+                    <option value="18:30">18:30</option>
+                    <option value="19:00">19:00</option>
+                    <option value="19:30">19:30</option>
+                    <option value="20:00">20:00</option>
+                    <option value="20:30">20:30</option>
+                    <option value="21:00">21:00</option>
+                    <option value="21:30">21:30</option>
+                    <option value="22:00">22:00</option>
+                    <option value="22:30">22:30</option>
+                    <option value="23:00">23:00</option>
+                    <option value="23:30">23:30</option>
+                    <option value="24:00">24:00</option>
+                </select>
+            </li>
+            <li class="form-group">
+                <label for="endTime">End Time</label>
+                <!-- input type="text" class="form-control" id="endTime" -->
+                <select name="endTime" id="endTime" class="form-control">
+                    <option selected disabled>Choose Time</option>
+                    <option value="1:00">1:00</option>
+                    <option value="1:30">1:30</option>
+                    <option value="2:00">2:00</option>
+                    <option value="2:30">2:30</option>
+                    <option value="3:00">3:00</option>
+                    <option value="3:30">3:30</option>
+                    <option value="4:00">4:00</option>
+                    <option value="4:30">4:30</option>
+                    <option value="5:00">5:00</option>
+                    <option value="5:30">5:30</option>
+                    <option value="6:00">6:00</option>
+                    <option value="6:30">6:30</option>
+                    <option value="7:00">7:00</option>
+                    <option value="7:30">7:30</option>
+                    <option value="8:00">8:00</option>
+                    <option value="8:30">8:30</option>
+                    <option value="9:00">9:00</option>
+                    <option value="9:30">9:30</option>
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="13:00">13:00</option>
+                    <option value="13:30">13:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="16:00">16:00</option>
+                    <option value="16:30">16:30</option>
+                    <option value="17:00">17:00</option>
+                    <option value="17:30">17:30</option>
+                    <option value="18:00">18:00</option>
+                    <option value="18:30">18:30</option>
+                    <option value="19:00">19:00</option>
+                    <option value="19:30">19:30</option>
+                    <option value="20:00">20:00</option>
+                    <option value="20:30">20:30</option>
+                    <option value="21:00">21:00</option>
+                    <option value="21:30">21:30</option>
+                    <option value="22:00">22:00</option>
+                    <option value="22:30">22:30</option>
+                    <option value="23:00">23:00</option>
+                    <option value="23:30">23:30</option>
+                    <option value="24:00">24:00</option>
+                </select>
+            </li>
+            <li class="form-group">
+                <label for="CrewName">Date</label>
+                <!-- input type="text" class="form-control" id="date" -->
+                <input type="text" placeholder="Choose Date" id="date" class="form-control">
+            </li>
+            <li>
+                <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+            </li>
+        </ul>
     </form>
+    <div id="weatherWrapper"></div>
+
+    <div id="openweathermap-widget-11"></div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/InputPage.js"></script>
+<!-- script src='https://openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script><script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 11,cityid: '420020695',appid: '77b90275619067390073f6ad77f070b0',units: 'imperial',containerid: 'openweathermap-widget-11',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "https://openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script -->
+
 </body>
 
 </html>
