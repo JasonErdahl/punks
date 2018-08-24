@@ -43,39 +43,41 @@ module.exports = function(app) {
       });
   });
 
-//   // DELETE route for deleting todos. We can get the id of the todo to be deleted from
-//   // req.params.id
-//   app.delete("/api/crewPlan/:id", function(req, res) {
-//     // We just have to specify which todo we want to destroy with "where"
-//     db.Todo.destroy({
-//       where: {
-//         id: req.params.id
-//       }
-//     }).then(function(dbCrewPlan) {
-//       res.json(dbCrewPlan);
-//     });
+  // DELETE route for deleting crewplan. We can get the id of the crewplan to be deleted from req.params.id
+  app.delete("/api/crewPlan/:id", function(req, res) {
+    // We just have to specify which crew plan we want to destroy with "where"
+    db.CrewPlan.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbCrewPlan) {
+      res.json(dbCrewPlan);
+    });
 
-//   });
+  });
 
-//   // PUT route for updating todos. We can get the updated todo data from req.body
-//   app.put("/api/crewPlan", function(req, res) {
+//   // PUT route for updating crew plan. We can get the updated crew plan data from req.body
+  app.put("/api/crewPlan", function(req, res) {
 
-//     // Update takes in an object describing the properties we want to update, and
-//     // we use where to describe which objects we want to update
-//     db.Todo.update({
-//       text: req.body.text,
-//       complete: req.body.complete
-//     }, {
-//       where: {
-//         id: req.body.id
-//       }
-//     }).then(function(dbCrewPlan) {
-//       res.json(dbCrewPlan);
-//     })
-//       .catch(function(err) {
-//       // Whenever a validation or flag fails, an error is thrown
-//       // We can "catch" the error to prevent it from being "thrown", which could crash our node app
-//         res.json(err);
-//       });
-//   });
+    // Update takes in an object describing the properties we want to update, and
+    // we use where to describe which objects we want to update
+    db.CrewPlan.update({
+      turbineNumber: req.body.turbineNumber,
+      crewName: req.body.crewName,
+      startTime: req.body.startTime,
+      endTime: req.body.endTime,
+      date: req.body.date
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbCrewPlan) {
+      res.json(dbCrewPlan);
+    })
+      .catch(function(err) {
+      // Whenever a validation or flag fails, an error is thrown
+      // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+        res.json(err);
+      });
+  });
 };
