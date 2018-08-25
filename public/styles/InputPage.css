@@ -1322,10 +1322,11 @@ body.InputPageWrapper{
 .txtBold {font-weight:700;}
 .InputPageWrapper .inputPageUL{ list-style: none; margin-left: 0px; padding-left: 20px;}
 .InputPageWrapper .inputPageUL li { display: inline-block; margin-right: 5px;}
-.InputPageWrapper .card { background-color: transparent; border: 1px solid #f8f9fa;}
+.InputPageWrapper .card { background-color: transparent; }
+.InputPageWrapper .cardInput { border: 1px solid #f8f9fa; }
 .InputPageWrapper #weatherWrapper .card-body-wrapper { background-color: rgba(211, 211, 211, 0.3); }
 .InputPageWrapper .card-heading, .InputPageWrapper .card-body { color:#fff; }
-.InputPageWrapper #weatherWrapper .card-body{ /* text-shadow: 2px 2px #17a2b8; */ }
+.InputPageWrapper #weatherWrapper .card-body { /* text-shadow: 2px 2px #17a2b8; */ }
 
 
 @media (min-width: 980px) {
