@@ -66,17 +66,18 @@ module.exports = function(app) {
       crewName: req.body.crewName,
       startTime: req.body.startTime,
       endTime: req.body.endTime,
-      date: req.body.date
     }, {
       where: {
-        id: req.body.id
+        id: req.params.id
       }
     }).then(function(dbCrewPlan) {
+
       res.json(dbCrewPlan);
     })
       .catch(function(err) {
       // Whenever a validation or flag fails, an error is thrown
       // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+
         res.json(err);
       });
   });
