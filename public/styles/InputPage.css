@@ -1309,7 +1309,41 @@ a.ui-button:active,
 }
 
 /* INPUT PAGE CSS */
+
+body.InputPageWrapper{
+    background:url('../images/towerFromBase.jpg') no-repeat center center fixed;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 .txtRed {color:red;}
+.txtBlue {color:#17a2b8;}
 .txtBold {font-weight:700;}
-.inputPageUL{ list-style: none; }
-.inputPageUL li { display: inline-block; margin-right: 5px;}
+.InputPageWrapper .inputPageUL{ list-style: none; margin-left: 0px; padding-left: 20px;}
+.InputPageWrapper .inputPageUL li { display: inline-block; margin-right: 5px;}
+.InputPageWrapper .card { background-color: transparent; border: 1px solid #f8f9fa;}
+.InputPageWrapper #weatherWrapper .card-body-wrapper { background-color: rgba(211, 211, 211, 0.3); }
+.InputPageWrapper .card-heading, .InputPageWrapper .card-body { color:#fff; }
+.InputPageWrapper #weatherWrapper .card-body{ /* text-shadow: 2px 2px #17a2b8; */ }
+
+
+@media (min-width: 980px) {
+    /* h1{background-color:black;} */
+#weatherWrapper {width: 500px; margin-left: 20px;}
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 980px) {
+    /* h1{background-color:green;} */
+#weatherWrapper {width: 500px; margin-left: 20px;}
+}
+/* Landscape phone to portrait tablet */
+@media (min-width: 640px) and (max-width: 768px) {
+    /* h1{background-color:yellow;} */
+#weatherWrapper {width: 95%; margin-left: 20px;}
+}
+/* Landscape phones and down */
+@media (max-width: 640px) {
+    /* h1{background-color:orange;} */
+#weatherWrapper {width: 95%; margin-left: 20px;}
+}
