@@ -8,8 +8,8 @@
   },
   "test": {
     "username": "root",
-    "password": "root",  // changed password to "root" - Jag 
-    "database": "CrewPlan_test",  // changed database to "CrewPlan_db" - Jag
+    "password": "root",
+    "database": "CrewPlan_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
@@ -20,12 +20,3 @@
   }
  }
 
-  // commented out previous code and replaced with JAWD_DB code - Jag 
-
-  // "production": {
-  //   "username": "root",
-  //   "password": null,
-  //   "database": "database_production",
-  //   "host": "127.0.0.1",
-  //   "dialect": "mysql"
-  // }
