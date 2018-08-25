@@ -64,7 +64,7 @@ weatherMessages = {
             alert('End time is earlier or the same as the start time!');
             return;
         } else if(crewplan.date === ''){
-            alert('Choose date!');
+            alert('Choose todays date!');
             return;
         }
 
@@ -75,11 +75,8 @@ weatherMessages = {
 
     //Helper function to clear input fields after they submit
     function clearInputFields(){
-        TurbineSite.val("");
-        CrewName.val("");
-        StartTime.val("");
-        EndTime.val("");
-        DateVal.val("");
+        $('input#date').val('');
+        $("select").each(function() { this.selectedIndex = 0; });
     }
 
     $("#date").datepicker({minDate: 0 });
