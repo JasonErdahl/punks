@@ -1309,7 +1309,38 @@ a.ui-button:active,
 }
 
 /* INPUT PAGE CSS */
+
+body.InputPageWrapper{
+    background:url('../images/towerFromBase.jpg') no-repeat center center fixed;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 .txtRed {color:red;}
 .txtBold {font-weight:700;}
-.inputPageUL{ list-style: none; }
-.inputPageUL li { display: inline-block; margin-right: 5px;}
+.InputPageWrapper .inputPageUL{ list-style: none; }
+.InputPageWrapper .inputPageUL li { display: inline-block; margin-right: 5px;}
+.InputPageWrapper .card { background-color: transparent; border: 1px solid #f8f9fa;}
+.InputPageWrapper .card-heading, .InputPageWrapper .card-body {color:#fff;}
+
+
+@media (min-width: 980px) {
+    /* h1{background-color:black;} */
+#weatherWrapper {width: 500px; margin-left: 20px;}
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 980px) {
+    /* h1{background-color:green;} */
+#weatherWrapper {width: 500px; margin-left: 20px;}
+}
+/* Landscape phone to portrait tablet */
+@media (min-width: 640px) and (max-width: 768px) {
+    /* h1{background-color:yellow;} */
+#weatherWrapper {width: 500px; margin-left: 20px;}
+}
+/* Landscape phones and down */
+@media (max-width: 640px) {
+    /* h1{background-color:orange;} */
+#weatherWrapper {width: 95%; margin-left: 20px;}
+}
