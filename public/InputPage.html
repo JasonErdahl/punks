@@ -11,160 +11,170 @@
     <link rel="stylesheet" href="styles/InputPage.css">
 </head>
 
-<body>
+<body class="InputPageWrapper">
+    <div class="container">
+        <div><h1><span class="badge badge-secondary">Scheduler</span></h1></div>   
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body" id="form-section">
+                        <form>
+                            <ul class="inputPageUL">
+                                <li class="form-group">
+                                    <label for="TurbineSite">Turbine Site</label>
+                                    <!-- input type="text" class="form-control" id="turbineSite" -->
+                                    <select name="turbineSite" id="turbineSite" class="form-control">
+                                        <option selected disabled>Choose Site</option>
+                                        <option value="Turbine Site 1">Turbine Site 1</option>
+                                        <option value="Turbine Site 2">Turbine Site 2</option>
+                                        <option value="Turbine Site 3">Turbine Site 3</option>
+                                        <option value="Turbine Site 4">Turbine Site 4</option>
+                                        <option value="Turbine Site 5">Turbine Site 5</option>
+                                    </select>
+                                </li>
+                                <li class="form-group">
+                                    <label for="CrewName">Crew Name</label>
+                                    <!-- input type="text" class="form-control" id="crewName" -->
+                                    <select name="crewName" id="crewName" class="form-control">
+                                        <option selected disabled>Choose Crew</option>
+                                        <option value="OffloadCrew">Offload Crew</option>
+                                        <option value="HVTCrew">HVT Crew</option>
+                                        <option value="GroutCrew">Grout Crew</option>
+                                        <option value="RebarCrew">Rebar Crew</option>
+                                        <option value="CivilCrew">Civil Crew</option>
+                                        <option value="TorqueCrew">Torque Crew</option>
+                                    </select>
+                                </li>
+                                <li class="form-group">
+                                    <label for="startTime">Start Time</label>
+                                    <!-- input type="text" class="form-control" id="startTime" -->
+                                    <select name="crewName" id="startTime" class="form-control">
+                                        <option selected disabled>Choose Time</option>
+                                        <option value="1:00">1:00</option>
+                                        <option value="1:30">1:30</option>
+                                        <option value="2:00">2:00</option>
+                                        <option value="2:30">2:30</option>
+                                        <option value="3:00">3:00</option>
+                                        <option value="3:30">3:30</option>
+                                        <option value="4:00">4:00</option>
+                                        <option value="4:30">4:30</option>
+                                        <option value="5:00">5:00</option>
+                                        <option value="5:30">5:30</option>
+                                        <option value="6:00">6:00</option>
+                                        <option value="6:30">6:30</option>
+                                        <option value="7:00">7:00</option>
+                                        <option value="7:30">7:30</option>
+                                        <option value="8:00">8:00</option>
+                                        <option value="8:30">8:30</option>
+                                        <option value="9:00">9:00</option>
+                                        <option value="9:30">9:30</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="10:30">10:30</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="11:30">11:30</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="12:30">12:30</option>
+                                        <option value="13:00">13:00</option>
+                                        <option value="13:30">13:30</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="14:30">14:30</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="15:30">15:30</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="16:30">16:30</option>
+                                        <option value="17:00">17:00</option>
+                                        <option value="17:30">17:30</option>
+                                        <option value="18:00">18:00</option>
+                                        <option value="18:30">18:30</option>
+                                        <option value="19:00">19:00</option>
+                                        <option value="19:30">19:30</option>
+                                        <option value="20:00">20:00</option>
+                                        <option value="20:30">20:30</option>
+                                        <option value="21:00">21:00</option>
+                                        <option value="21:30">21:30</option>
+                                        <option value="22:00">22:00</option>
+                                        <option value="22:30">22:30</option>
+                                        <option value="23:00">23:00</option>
+                                        <option value="23:30">23:30</option>
+                                        <option value="24:00">24:00</option>
+                                    </select>
+                                </li>
+                                <li class="form-group">
+                                    <label for="endTime">End Time</label>
+                                    <!-- input type="text" class="form-control" id="endTime" -->
+                                    <select name="endTime" id="endTime" class="form-control">
+                                        <option selected disabled>Choose Time</option>
+                                        <option value="1:00">1:00</option>
+                                        <option value="1:30">1:30</option>
+                                        <option value="2:00">2:00</option>
+                                        <option value="2:30">2:30</option>
+                                        <option value="3:00">3:00</option>
+                                        <option value="3:30">3:30</option>
+                                        <option value="4:00">4:00</option>
+                                        <option value="4:30">4:30</option>
+                                        <option value="5:00">5:00</option>
+                                        <option value="5:30">5:30</option>
+                                        <option value="6:00">6:00</option>
+                                        <option value="6:30">6:30</option>
+                                        <option value="7:00">7:00</option>
+                                        <option value="7:30">7:30</option>
+                                        <option value="8:00">8:00</option>
+                                        <option value="8:30">8:30</option>
+                                        <option value="9:00">9:00</option>
+                                        <option value="9:30">9:30</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="10:30">10:30</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="11:30">11:30</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="12:30">12:30</option>
+                                        <option value="13:00">13:00</option>
+                                        <option value="13:30">13:30</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="14:30">14:30</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="15:30">15:30</option>
+                                        <option value="16:00">16:00</option>
+                                        <option value="16:30">16:30</option>
+                                        <option value="17:00">17:00</option>
+                                        <option value="17:30">17:30</option>
+                                        <option value="18:00">18:00</option>
+                                        <option value="18:30">18:30</option>
+                                        <option value="19:00">19:00</option>
+                                        <option value="19:30">19:30</option>
+                                        <option value="20:00">20:00</option>
+                                        <option value="20:30">20:30</option>
+                                        <option value="21:00">21:00</option>
+                                        <option value="21:30">21:30</option>
+                                        <option value="22:00">22:00</option>
+                                        <option value="22:30">22:30</option>
+                                        <option value="23:00">23:00</option>
+                                        <option value="23:30">23:30</option>
+                                        <option value="24:00">24:00</option>
+                                    </select>
+                                </li>
+                                <li class="form-group">
+                                    <label for="CrewName">Date</label>
+                                    <!-- input type="text" class="form-control" id="date" -->
+                                    <input type="text" placeholder="Choose Date" id="date" class="form-control">
+                                </li>
+                                <li>
+                                    <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+                                </li>
+                            </ul>
+                        </form>
+                        <div id="weatherWrapper"></div>
 
-    <div class="hero-unit">
-        <h1>Scheduler</h1>
+                        <div id="openweathermap-widget-11"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <form>
-        <ul class="inputPageUL">
-            <li class="form-group">
-                <label for="TurbineSite">Turbine Site</label>
-                <!-- input type="text" class="form-control" id="turbineSite" -->
-                <select name="turbineSite" id="turbineSite" class="form-control">
-                    <option selected disabled>Choose Site</option>
-                    <option value="Turbine Site 1">Turbine Site 1</option>
-                    <option value="Turbine Site 2">Turbine Site 2</option>
-                    <option value="Turbine Site 3">Turbine Site 3</option>
-                    <option value="Turbine Site 4">Turbine Site 4</option>
-                    <option value="Turbine Site 5">Turbine Site 5</option>
-                </select>
-            </li>
-            <li class="form-group">
-                <label for="CrewName">Crew Name</label>
-                <!-- input type="text" class="form-control" id="crewName" -->
-                <select name="crewName" id="crewName" class="form-control">
-                    <option selected disabled>Choose Crew</option>
-                    <option value="OffloadCrew">Offload Crew</option>
-                    <option value="HVTCrew">HVT Crew</option>
-                    <option value="GroutCrew">Grout Crew</option>
-                    <option value="RebarCrew">Rebar Crew</option>
-                    <option value="CivilCrew">Civil Crew</option>
-                    <option value="TorqueCrew">Torque Crew</option>
-                </select>
-            </li>
-            <li class="form-group">
-                <label for="startTime">Start Time</label>
-                <!-- input type="text" class="form-control" id="startTime" -->
-                <select name="crewName" id="startTime" class="form-control">
-                    <option selected disabled>Choose Time</option>
-                    <option value="1:00">1:00</option>
-                    <option value="1:30">1:30</option>
-                    <option value="2:00">2:00</option>
-                    <option value="2:30">2:30</option>
-                    <option value="3:00">3:00</option>
-                    <option value="3:30">3:30</option>
-                    <option value="4:00">4:00</option>
-                    <option value="4:30">4:30</option>
-                    <option value="5:00">5:00</option>
-                    <option value="5:30">5:30</option>
-                    <option value="6:00">6:00</option>
-                    <option value="6:30">6:30</option>
-                    <option value="7:00">7:00</option>
-                    <option value="7:30">7:30</option>
-                    <option value="8:00">8:00</option>
-                    <option value="8:30">8:30</option>
-                    <option value="9:00">9:00</option>
-                    <option value="9:30">9:30</option>
-                    <option value="10:00">10:00</option>
-                    <option value="10:30">10:30</option>
-                    <option value="11:00">11:00</option>
-                    <option value="11:30">11:30</option>
-                    <option value="12:00">12:00</option>
-                    <option value="12:30">12:30</option>
-                    <option value="13:00">13:00</option>
-                    <option value="13:30">13:30</option>
-                    <option value="14:00">14:00</option>
-                    <option value="14:30">14:30</option>
-                    <option value="15:00">15:00</option>
-                    <option value="15:30">15:30</option>
-                    <option value="16:00">16:00</option>
-                    <option value="16:30">16:30</option>
-                    <option value="17:00">17:00</option>
-                    <option value="17:30">17:30</option>
-                    <option value="18:00">18:00</option>
-                    <option value="18:30">18:30</option>
-                    <option value="19:00">19:00</option>
-                    <option value="19:30">19:30</option>
-                    <option value="20:00">20:00</option>
-                    <option value="20:30">20:30</option>
-                    <option value="21:00">21:00</option>
-                    <option value="21:30">21:30</option>
-                    <option value="22:00">22:00</option>
-                    <option value="22:30">22:30</option>
-                    <option value="23:00">23:00</option>
-                    <option value="23:30">23:30</option>
-                    <option value="24:00">24:00</option>
-                </select>
-            </li>
-            <li class="form-group">
-                <label for="endTime">End Time</label>
-                <!-- input type="text" class="form-control" id="endTime" -->
-                <select name="endTime" id="endTime" class="form-control">
-                    <option selected disabled>Choose Time</option>
-                    <option value="1:00">1:00</option>
-                    <option value="1:30">1:30</option>
-                    <option value="2:00">2:00</option>
-                    <option value="2:30">2:30</option>
-                    <option value="3:00">3:00</option>
-                    <option value="3:30">3:30</option>
-                    <option value="4:00">4:00</option>
-                    <option value="4:30">4:30</option>
-                    <option value="5:00">5:00</option>
-                    <option value="5:30">5:30</option>
-                    <option value="6:00">6:00</option>
-                    <option value="6:30">6:30</option>
-                    <option value="7:00">7:00</option>
-                    <option value="7:30">7:30</option>
-                    <option value="8:00">8:00</option>
-                    <option value="8:30">8:30</option>
-                    <option value="9:00">9:00</option>
-                    <option value="9:30">9:30</option>
-                    <option value="10:00">10:00</option>
-                    <option value="10:30">10:30</option>
-                    <option value="11:00">11:00</option>
-                    <option value="11:30">11:30</option>
-                    <option value="12:00">12:00</option>
-                    <option value="12:30">12:30</option>
-                    <option value="13:00">13:00</option>
-                    <option value="13:30">13:30</option>
-                    <option value="14:00">14:00</option>
-                    <option value="14:30">14:30</option>
-                    <option value="15:00">15:00</option>
-                    <option value="15:30">15:30</option>
-                    <option value="16:00">16:00</option>
-                    <option value="16:30">16:30</option>
-                    <option value="17:00">17:00</option>
-                    <option value="17:30">17:30</option>
-                    <option value="18:00">18:00</option>
-                    <option value="18:30">18:30</option>
-                    <option value="19:00">19:00</option>
-                    <option value="19:30">19:30</option>
-                    <option value="20:00">20:00</option>
-                    <option value="20:30">20:30</option>
-                    <option value="21:00">21:00</option>
-                    <option value="21:30">21:30</option>
-                    <option value="22:00">22:00</option>
-                    <option value="22:30">22:30</option>
-                    <option value="23:00">23:00</option>
-                    <option value="23:30">23:30</option>
-                    <option value="24:00">24:00</option>
-                </select>
-            </li>
-            <li class="form-group">
-                <label for="CrewName">Date</label>
-                <!-- input type="text" class="form-control" id="date" -->
-                <input type="text" placeholder="Choose Date" id="date" class="form-control">
-            </li>
-            <li>
-                <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
-            </li>
-        </ul>
-    </form>
-    <div id="weatherWrapper"></div>
 
-    <div id="openweathermap-widget-11"></div>
+
+    
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>

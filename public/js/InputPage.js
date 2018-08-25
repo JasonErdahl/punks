@@ -43,10 +43,10 @@ weatherMessages = {
             date: DateVal.val()
         };
 
-        // var startTemp = new Date("August 23, 2010 " + crewplan.startTime);
-        // startTemp = startTemp.getTime();
-        // var endTemp = new Date("August 23, 2010 " + crewplan.endTime);
-        // endTemp = endTemp.getTime();
+        var startTemp = new Date("August 23, 2010 " + crewplan.startTime);
+        startTemp = startTemp.getTime();
+        var endTemp = new Date("August 23, 2010 " + crewplan.endTime);
+        endTemp = endTemp.getTime();
 
         if (crewplan.turbineNumber === null){
             alert('Choose turbine site!');
@@ -60,12 +60,12 @@ weatherMessages = {
         } else if(crewplan.endTime === null){
             alert('Choose end time!');
             return;
-        // } else if(startTemp >= endTemp){
-        //     alert('End time is earlier or the same as the start time!');
-        //     return;
-        } else if(crewplan.startTime >= crewplan.endTime){
+        } else if(startTemp >= endTemp){
             alert('End time is earlier or the same as the start time!');
             return;
+        // } else if(crewplan.startTime >= crewplan.endTime){
+        //     alert('End time is earlier or the same as the start time!');
+        //     return;
         } else if(crewplan.date === ''){
             alert('Choose date!');
             return;
@@ -111,9 +111,14 @@ function displayWeather(location) {
         console.log(queryURL);
         // Log the resulting object
         console.log(response);
+        var currentWeatherLength = response.weather.length;
+        var currentConditions = "";
+ 
+        for (i=0; i < currentWeatherLength; i++ ) {
+            currentConditions += response.weather[i].main+' ('+response.weather[i].description+'), ';
+        }
+
         var currentCity = response.name;
-        var currentConditions = response.weather[0].main;
-        var currentConditionsDescription = response.weather[0].description;
         var currentHumidity = response.main.humidity +' %';
         var currentPressure = response.main.pressure;
         var currentTempF = temperatureConverterF(response.main.temp) +' F ';
@@ -129,15 +134,15 @@ function displayWeather(location) {
 
         console.log("windgust:"+currentWindGust);
         // Transfer content to HTML
-        htmlElements += '<div class="card border-success mb-3">';
-        htmlElements += '   <div class="card-header" style="background-color: orangered;color:black; font-weight:bold; text-align:center">'+weatherMessages.displayWeatherInformed+'</div>';
+        htmlElements += '<div class="card border-danger mb-3">';
+        htmlElements += '   <div class="card-header" style="background-color: orangered;color:white; font-weight:bold;text-align:center;">'+weatherMessages.displayWeatherInformed+'</div>';
         htmlElements += '   <div class="card-body">';  
         htmlElements += '       <div class="card-heading" id="currentWeather">';  
         htmlElements += '           <p class="card-title"><strong>'+weatherMessages.displayWeatherTitle+' '+currentCity+'</strong></p>';
         htmlElements += '       </div>';
         htmlElements += '       <div class="card-body" id="weatherWrapper">';
         htmlElements += '           <div class="displayGustWarning txtRed txtBold"><h3>Warning a gust &gt; 10mph has been reported</h3></div>';          
-        htmlElements += '           <div>'+weatherMessages.displayWeatherConditions+': '+currentConditions+' ('+currentConditionsDescription+')</div>';   
+        htmlElements += '           <div>'+weatherMessages.displayWeatherConditions+': '+currentConditions+'</div>';   
         htmlElements += '           <div>'+weatherMessages.displayWeatherHumidity+': '+currentHumidity+'</div>';
         htmlElements += '           <div>'+weatherMessages.displayWeatherPressure+': '+currentPressure+'</div>';
         htmlElements += '           <div>'+weatherMessages.displayWeatherTemp+': '+currentTempF+'/ '+currentTempC+'</div>';
