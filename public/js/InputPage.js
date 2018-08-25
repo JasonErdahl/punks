@@ -63,9 +63,6 @@ weatherMessages = {
         } else if(startTemp >= endTemp){
             alert('End time is earlier or the same as the start time!');
             return;
-        // } else if(crewplan.startTime >= crewplan.endTime){
-        //     alert('End time is earlier or the same as the start time!');
-        //     return;
         } else if(crewplan.date === ''){
             alert('Choose date!');
             return;
@@ -115,9 +112,11 @@ function displayWeather(location) {
         var currentConditions = "";
  
         for (i=0; i < currentWeatherLength; i++ ) {
-            currentConditions += response.weather[i].main+' ('+response.weather[i].description+'), ';
+            //currentConditions += response.weather[i].main+' ('+response.weather[i].description+'), ';
+            currentConditions += response.weather[i].description +', ';
         }
-
+        //remove trailing comma from string
+        currentConditions = currentConditions.substring(0, currentConditions.lastIndexOf(","));
         var currentCity = response.name;
         var currentHumidity = response.main.humidity +' %';
         var currentPressure = response.main.pressure;
@@ -127,16 +126,16 @@ function displayWeather(location) {
         var currentTempMaxC = temperatureConverterC(response.main.temp_max) +' C ';
         var currentTempMinF = temperatureConverterF(response.main.temp_min) +' F ';
         var currentTempMinC = temperatureConverterC(response.main.temp_min) +' C ';
-        var currentWindSpeed = (response.wind.speed*2.24).toFixed(1);
-        var currentWindGust = (response.wind.gust*2.24).toFixed(1);
+        var currentWindSpeed = (response.wind.speed*2.24).toFixed(1) +' MPH ';
+        var currentWindGust = (response.wind.gust*2.24).toFixed(1) +' MPH ';
         var currentWindDeg = getCardinal(response.wind.deg);
 
 
         console.log("windgust:"+currentWindGust);
         // Transfer content to HTML
-        htmlElements += '<div class="card border-danger mb-3">';
-        htmlElements += '   <div class="card-header" style="background-color: orangered;color:white; font-weight:bold;text-align:center;">'+weatherMessages.displayWeatherInformed+'</div>';
-        htmlElements += '   <div class="card-body">';  
+        htmlElements += '<div class="card border-info mb-3">';
+        htmlElements += '   <div class="card-header" style="background-color:#17a2b8; color:white; font-weight:bold;text-align:center;">'+weatherMessages.displayWeatherInformed+'</div>';
+        htmlElements += '   <div class="card-body card-body-wrapper">';  
         htmlElements += '       <div class="card-heading" id="currentWeather">';  
         htmlElements += '           <p class="card-title"><strong>'+weatherMessages.displayWeatherTitle+' '+currentCity+'</strong></p>';
         htmlElements += '       </div>';
