@@ -20,6 +20,8 @@
   </div>
 
   <div class="timetable"></div>
+  <br>
+  <a><button type="button" class="btn btn-outline-dark" id="backBtn" href="/">Back to Scheduler</button></a>
 
   <!-- Modal -->
   <div class="modal fade" id="crewPlanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -33,10 +35,10 @@
         </div>
         <div class="modal-body">
             <ul style="list-style: none;">
-              <li class="itemlist"><strong>Crew: </strong><span id="crewName"></span></li>
-              <li class="itemlist"><strong>Turbine Site: </strong>Turbine Site: <span id="turbineSite"></span></li>
-              <li class="itemlist"><strong>Start Date: </strong><span id="startTime"></span></li>
-              <li class="itemlist"><strong>End Date: </strong><span id="endTime"></span></li>
+              <li class="itemlist"><strong>Crew: </strong><span id="crewNameModal"></span></li>
+              <li class="itemlist"><strong>Turbine Site: </strong>Turbine Site: <span id="turbineSiteModal"></span></li>
+              <li class="itemlist"><strong>Start Date: </strong><span id="startTimeModal"></span></li>
+              <li class="itemlist"><strong>End Date: </strong><span id="endTimeModal"></span></li>
             </ul>
           <p><strong>Make changes to current job: </strong></p>
           <form>
@@ -54,7 +56,6 @@
                   </li>
                   <li class="form-group">
                       <label for="CrewName">Crew Name</label>
-                      <!-- input type="text" class="form-control" id="crewName" -->
                       <select name="crewName" id="crewName" class="form-control">
                           <option selected disabled>Choose Crew</option>
                           <option value="OffloadCrew">Offload Crew</option>
@@ -67,7 +68,6 @@
                   </li>
                   <li class="form-group">
                       <label for="startTime">Start Time</label>
-                      <!-- input type="text" class="form-control" id="startTime" -->
                       <select name="crewName" id="startTime" class="form-control">
                           <option selected disabled>Choose Time</option>
                           <option value="1:00">1:00</option>
@@ -121,7 +121,6 @@
                   </li>
                   <li class="form-group">
                       <label for="endTime">End Time</label>
-                      <!-- input type="text" class="form-control" id="endTime" -->
                       <select name="endTime" id="endTime" class="form-control">
                           <option selected disabled>Choose Time</option>
                           <option value="1:00">1:00</option>
