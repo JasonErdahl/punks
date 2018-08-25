@@ -49,7 +49,7 @@
 .timetable>aside:before{
     content:"";
     display:block;
-    background-color:#fff;
+    /* background-color:#fff; */
     height:46px;
     position:relative;
     margin-top:-46px;
@@ -187,8 +187,8 @@
     border: solid 1px green;
     opacity: 0.70;
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: bolder;
 }
 
 .time-entry.HVTCrew{
@@ -196,8 +196,8 @@
     border: solid 1px blue;
     opacity: 0.70;
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: bolder;
 }
 
 .time-entry.GroutCrew{
@@ -205,8 +205,8 @@
     border: solid 1px yellow;
     opacity: 0.70;
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: bolder;
 }
 
 .time-entry.RebarCrew{
@@ -214,17 +214,17 @@
     border: solid 1px rebeccapurple;
     opacity: 0.70;
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: bolder;
 }
 
 .time-entry.CivilCrew{
-    background-color: aqua;
-    border: solid 1px aqua;
+    background-color: orange;
+    border: solid 1px orange;
     opacity: 0.70;
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: bolder;
 }
 
 .time-entry.TorqueCrew{
@@ -232,6 +232,26 @@
     border: solid 1px red;
     opacity: 0.70;
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: bolder;
 }
+
+/* Format for Modal */
+
+#deleteBtn{
+    background-color: red;
+    border: solid 1px red;
+}
+
+h1{
+    text-align: center;
+}
+
+.itemlist{
+    font-size: 14px;
+}
+
+ul{
+    padding: 0;
+}
+

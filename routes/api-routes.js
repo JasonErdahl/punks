@@ -57,7 +57,7 @@ module.exports = function(app) {
   });
 
 //   // PUT route for updating crew plan. We can get the updated crew plan data from req.body
-  app.put("/api/crewPlan", function(req, res) {
+  app.put("/api/crewPlan/:id", function(req, res) {
 
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
