@@ -1,25 +1,25 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
 
-weatherMessages = {
-    displayWeatherInformed: "Be Informed!",
-    displayWeatherTitle: "Current Weather in",
-    displayWeatherConditions: "Conditions",
-    displayWeatherHumidity: "Humidity",
-    displayWeatherPressure: "Pressure",
-    displayWeatherTemp: "Temp",
-    displayWeatherMaxTemp: "Max Temp",
-    displayWeatherMinTemp: "Min Temp",
-    displayWeatherWindSpeed: "Wind Speed",
-    displayWeatherWindGust: "Gust",
-    displayWeatherWindDirection: "Wind Direction",
-    createHtmlPhone: "Phone number",
-    createHtmlRating: "Rating",
-    onClickRestaurantsHeading: "Recommended Restaurants",
-    onClickLodgingHeading: "Recommended Lodging",
-    onClickAttractionsHeading: "Recommended Attractions",
+    weatherMessages = {
+        displayWeatherInformed: "Be Informed!",
+        displayWeatherTitle: "Current Weather in",
+        displayWeatherConditions: "Conditions",
+        displayWeatherHumidity: "Humidity",
+        displayWeatherPressure: "Pressure",
+        displayWeatherTemp: "Temp",
+        displayWeatherMaxTemp: "Max Temp",
+        displayWeatherMinTemp: "Min Temp",
+        displayWeatherWindSpeed: "Wind Speed",
+        displayWeatherWindGust: "Gust",
+        displayWeatherWindDirection: "Wind Direction",
+        createHtmlPhone: "Phone number",
+        createHtmlRating: "Rating",
+        onClickRestaurantsHeading: "Recommended Restaurants",
+        onClickLodgingHeading: "Recommended Lodging",
+        onClickAttractionsHeading: "Recommended Attractions",
 
-};
+    };
 
     //Variables for input values
     var TurbineSite = $("#turbineSite");
@@ -32,7 +32,7 @@ weatherMessages = {
     $("#submitBtn").on("click", insertCrewPlan);
 
     //Helper Function to post new data to the database
-    function insertCrewPlan(event){
+    function insertCrewPlan(event) {
         event.preventDefault();
 
         var crewplan = {
@@ -48,22 +48,22 @@ weatherMessages = {
         var endTemp = new Date("August 23, 2010 " + crewplan.endTime);
         endTemp = endTemp.getTime();
 
-        if (crewplan.turbineNumber === null){
+        if (crewplan.turbineNumber === null) {
             alert('Choose turbine site!');
             return;
-        } else if(crewplan.crewName === null){
+        } else if (crewplan.crewName === null) {
             alert('Choose crew name!');
             return;
-        } else if(crewplan.startTime === null){
+        } else if (crewplan.startTime === null) {
             alert('Choose start time!');
             return;
-        } else if(crewplan.endTime === null){
+        } else if (crewplan.endTime === null) {
             alert('Choose end time!');
             return;
-        } else if(startTemp >= endTemp){
+        } else if (startTemp >= endTemp) {
             alert('End time is earlier or the same as the start time!');
             return;
-        } else if(crewplan.date === ''){
+        } else if (crewplan.date === '') {
             alert('Choose todays date!');
             return;
         }
@@ -74,13 +74,17 @@ weatherMessages = {
     }
 
     //Helper function to clear input fields after they submit
-    function clearInputFields(){
+    function clearInputFields() {
         $('input#date').val('');
-        $("select").each(function() { this.selectedIndex = 0; });
+        $("select").each(function () {
+            this.selectedIndex = 0;
+        });
     }
 
-    $("#date").datepicker({minDate: 0 });
- 
+    $("#date").datepicker({
+        minDate: 0
+    });
+
 });
 
 
@@ -93,73 +97,73 @@ function displayWeather(location) {
 
     // Here we are building the URL we need to query the database
     //var queryURL = "https://api.openweathermap.org/data/2.5/weather?q="+location+"&appid=" + APIKey;
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?zip="+location+",us&appid=" + APIKey;
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?zip=" + location + ",us&appid=" + APIKey;
     var htmlElements = '';
 
     // We then created an AJAX call
     $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
         // Log the queryURL
         console.log(queryURL);
         // Log the resulting object
         console.log(response);
         var currentWeatherLength = response.weather.length;
         var currentConditions = "";
- 
-        for (i=0; i < currentWeatherLength; i++ ) {
+
+        for (i = 0; i < currentWeatherLength; i++) {
             //currentConditions += response.weather[i].main+' ('+response.weather[i].description+'), ';
-            currentConditions += response.weather[i].description +', ';
+            currentConditions += response.weather[i].description + ', ';
         }
         //remove trailing comma from string
         currentConditions = currentConditions.substring(0, currentConditions.lastIndexOf(","));
         var currentCity = response.name;
-        var currentHumidity = response.main.humidity +' %';
+        var currentHumidity = response.main.humidity + ' %';
         var currentPressure = response.main.pressure;
-        var currentTempF = temperatureConverterF(response.main.temp) +' F ';
-        var currentTempC = temperatureConverterC(response.main.temp) +' C ';
-        var currentTempMaxF = temperatureConverterF(response.main.temp_max) +' F ';
-        var currentTempMaxC = temperatureConverterC(response.main.temp_max) +' C ';
-        var currentTempMinF = temperatureConverterF(response.main.temp_min) +' F ';
-        var currentTempMinC = temperatureConverterC(response.main.temp_min) +' C ';
-        var currentWindSpeed = (response.wind.speed*2.24).toFixed(1) +' MPH ';
-        var currentWindGust = (response.wind.gust*2.24).toFixed(1) +' MPH ';
+        var currentTempF = temperatureConverterF(response.main.temp) + ' F ';
+        var currentTempC = temperatureConverterC(response.main.temp) + ' C ';
+        var currentTempMaxF = temperatureConverterF(response.main.temp_max) + ' F ';
+        var currentTempMaxC = temperatureConverterC(response.main.temp_max) + ' C ';
+        var currentTempMinF = temperatureConverterF(response.main.temp_min) + ' F ';
+        var currentTempMinC = temperatureConverterC(response.main.temp_min) + ' C ';
+        var currentWindSpeed = (response.wind.speed * 2.24).toFixed(1) + ' MPH ';
+        var currentWindGust = (response.wind.gust * 2.24).toFixed(1) + ' MPH ';
         var currentWindDeg = getCardinal(response.wind.deg);
 
 
-        console.log("windgust:"+currentWindGust);
+        console.log("windgust:" + currentWindGust);
         // Transfer content to HTML
         htmlElements += '<div class="card border-info mb-3">';
-        htmlElements += '   <div class="card-header" style="background-color:#17a2b8; color:white; font-weight:bold;text-align:center;">'+weatherMessages.displayWeatherInformed+'</div>';
-        htmlElements += '   <div class="card-body card-body-wrapper">';  
-        htmlElements += '       <div class="card-heading" id="currentWeather">';  
-        htmlElements += '           <p class="card-title"><strong>'+weatherMessages.displayWeatherTitle+' '+currentCity+'</strong></p>';
+        htmlElements += '   <div class="card-header" style="background-color:#17a2b8; color:white; font-weight:bold;text-align:center;">' + weatherMessages.displayWeatherInformed + '</div>';
+        htmlElements += '   <div class="card-body card-body-wrapper">';
+        htmlElements += '       <div class="card-heading" id="currentWeather">';
+        htmlElements += '           <p class="card-title"><strong>' + weatherMessages.displayWeatherTitle + ' ' + currentCity + '</strong></p>';
         htmlElements += '       </div>';
         htmlElements += '       <div class="card-body" id="weatherWrapper">';
-        htmlElements += '           <div class="displayGustWarning txtRed txtBold"><h3>Warning a gust &gt; 10mph has been reported</h3></div>';          
-        htmlElements += '           <div>'+weatherMessages.displayWeatherConditions+': '+currentConditions+'</div>';   
-        htmlElements += '           <div>'+weatherMessages.displayWeatherHumidity+': '+currentHumidity+'</div>';
-        htmlElements += '           <div>'+weatherMessages.displayWeatherPressure+': '+currentPressure+'</div>';
-        htmlElements += '           <div>'+weatherMessages.displayWeatherTemp+': '+currentTempF+'/ '+currentTempC+'</div>';
-        htmlElements += '           <div>'+weatherMessages.displayWeatherMaxTemp+': '+currentTempMaxF+'/ '+currentTempMaxC+'</div>';
-        htmlElements += '           <div>'+weatherMessages.displayWeatherMinTemp+': '+currentTempMinF+'/ '+currentTempMinC+'</div>';
-        htmlElements += '           <div>'+weatherMessages.displayWeatherWindSpeed+': '+currentWindSpeed+' <span class="displayGust">(' +weatherMessages.displayWeatherWindGust+': '+currentWindGust+')</span></div>';
-        htmlElements += '           <div>'+weatherMessages.displayWeatherWindDirection+': '+currentWindDeg+'</div>';        
+        htmlElements += '           <div class="displayGustWarning txtRed txtBold"><h3>Warning a gust &gt; 10mph has been reported</h3></div>';
+        htmlElements += '           <div>' + weatherMessages.displayWeatherConditions + ': ' + currentConditions + '</div>';
+        htmlElements += '           <div>' + weatherMessages.displayWeatherHumidity + ': ' + currentHumidity + '</div>';
+        htmlElements += '           <div>' + weatherMessages.displayWeatherPressure + ': ' + currentPressure + '</div>';
+        htmlElements += '           <div>' + weatherMessages.displayWeatherTemp + ': ' + currentTempF + '/ ' + currentTempC + '</div>';
+        htmlElements += '           <div>' + weatherMessages.displayWeatherMaxTemp + ': ' + currentTempMaxF + '/ ' + currentTempMaxC + '</div>';
+        htmlElements += '           <div>' + weatherMessages.displayWeatherMinTemp + ': ' + currentTempMinF + '/ ' + currentTempMinC + '</div>';
+        htmlElements += '           <div>' + weatherMessages.displayWeatherWindSpeed + ': ' + currentWindSpeed + ' <span class="displayGust">(' + weatherMessages.displayWeatherWindGust + ': ' + currentWindGust + ')</span></div>';
+        htmlElements += '           <div>' + weatherMessages.displayWeatherWindDirection + ': ' + currentWindDeg + '</div>';
         htmlElements += '       </div>';
         htmlElements += '   </div>';
         htmlElements += '</div>';
 
         $('#weatherWrapper').append(htmlElements);
 
-        $(".displayGustWarning").css("display","none");
-        if ((currentWindGust >= 10) && (isNaN(currentWindGust))){
+        $(".displayGustWarning").css("display", "none");
+        if ((currentWindGust >= 10) && (isNaN(currentWindGust))) {
             console.log("wind gust warning");
-            $(".displayGustWarning").css("display","block");
+            $(".displayGustWarning").css("display", "block");
         }
-        if (isNaN(currentWindGust)){
+        if (isNaN(currentWindGust)) {
             console.log("wind gust missing");
-            $(".displayGust").css("display","none");
+            $(".displayGust").css("display", "none");
         }
 
     });
@@ -170,12 +174,13 @@ function displayWeather(location) {
 // ### Utility Functions   ###
 // ###########################
 function temperatureConverterF(valNum) {
-  valNum = parseFloat(valNum);
-  return (((valNum - 273.15) * 1.8) + 32).toFixed(1);
+    valNum = parseFloat(valNum);
+    return (((valNum - 273.15) * 1.8) + 32).toFixed(1);
 }
+
 function temperatureConverterC(valNum) {
-  valNum = parseFloat(valNum);
-  return (valNum - 273.15).toFixed(1);
+    valNum = parseFloat(valNum);
+    return (valNum - 273.15).toFixed(1);
 }
 
 function getCardinal(num) {

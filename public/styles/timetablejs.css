@@ -1,188 +1,205 @@
-.timetable{
-    display:flex;
-    align-items:stretch;
-    width:100%;
-    max-width:100%;
-    box-sizing:border-box
-}
-.timetable *{
-    box-sizing:inherit
+.timetable {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box
 }
 
-.timetable li,.timetable ul{
-    list-style-type:none;
-    margin:0
+.timetable * {
+    box-sizing: inherit
 }
 
-.timetable li,.timetable ul{
-    padding:0
+.timetable li,
+.timetable ul {
+    list-style-type: none;
+    margin: 0
 }
 
-.timetable>aside{
-    flex:none;
-    max-width:30%;
-    padding:0!important;
-    margin-top:46px;
-    border-right:5px solid transparent;
-    position:relative
+.timetable li,
+.timetable ul {
+    padding: 0
 }
 
-.timetable>aside li{
-    padding:0 15px;
-    background-color:#efefef;
-    line-height:46px
+.timetable>aside {
+    flex: none;
+    max-width: 30%;
+    padding: 0 !important;
+    margin-top: 46px;
+    border-right: 5px solid transparent;
+    position: relative
 }
 
-.timetable>aside li:not(:last-of-type){
-    border-bottom:1px solid #fff
+.timetable>aside li {
+    padding: 0 15px;
+    background-color: #efefef;
+    line-height: 46px
 }
 
-.timetable>aside .row-heading{
-    display:inline-block;
-    max-width:100%;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
-    word-wrap:normal
+.timetable>aside li:not(:last-of-type) {
+    border-bottom: 1px solid #fff
 }
 
-.timetable>aside:before{
-    content:"";
-    display:block;
+.timetable>aside .row-heading {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal
+}
+
+.timetable>aside:before {
+    content: "";
+    display: block;
     /* background-color:#fff; */
-    height:46px;
-    position:relative;
-    margin-top:-46px;
-    top:0
+    height: 46px;
+    position: relative;
+    margin-top: -46px;
+    top: 0
 }
 
-.timetable aside li,.timetable time li{
-    height:46px
+.timetable aside li,
+.timetable time li {
+    height: 46px
 }
 
-.timetable>section{
-    flex:3 0 auto;
-    width:0;padding:0!important
-}
-  
-.timetable>section time{
-    display:block;
-    width:100%;
-    overflow-x:scroll;
-    -webkit-overflow-scrolling:touch
+.timetable>section {
+    flex: 3 0 auto;
+    width: 0;
+    padding: 0 !important
 }
 
-.timetable>section>header{
-    position:relative;
-    top:0;z-index:3;
-    width:100%;overflow:hidden;
-    background-color:#fff;
-    transform-style:preserve-3d
-
+.timetable>section time {
+    display: block;
+    width: 100%;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch
 }
 
-.timetable>section>header ul{
-    display:flex;
-    height:46px;
-    align-items:center
+.timetable>section>header {
+    position: relative;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    transform-style: preserve-3d
 }
 
-.timetable>section>header li{
-    flex:none;
-    display:block;
-    position:relative;
-    width:96px
-}
-    
-.timetable>section>header li .time-label{
-    display:block;
-    position:absolute;
-    left:0
+.timetable>section>header ul {
+    display: flex;
+    height: 46px;
+    align-items: center
 }
 
-.timetable>section>header li:not(:first-of-type) .time-label{
-    transform:translateX(-50%)}.timetable>section>header li:last-of-type
-    {
-        width:0
-    }
-    
-.timetable>section>header li:last-of-type .time-label{
-    transform:translateX(-100%)}.timetable ul.room-timeline{
-        border-left:none;
-        display:flex;
-        flex-direction:column;
-        align-items:stretch
-    }
-
-
-.timetable ul.room-timeline li{
-    position:relative;
-    background-color:#f4f4f4;
-    height:46px
+.timetable>section>header li {
+    flex: none;
+    display: block;
+    position: relative;
+    width: 96px
 }
 
-.timetable ul.room-timeline li:nth-of-type(odd){
-    background-color:#fdfdfd
+.timetable>section>header li .time-label {
+    display: block;
+    position: absolute;
+    left: 0
 }
 
-.timetable ul.room-timeline li:first-of-type{
-    border-top:1px solid #e5e5e5
+.timetable>section>header li:not(:first-of-type) .time-label {
+    transform: translateX(-50%)
 }
 
-.timetable ul.room-timeline li:last-of-type{
-    border-bottom:1px solid #e5e5e5
+.timetable>section>header li:last-of-type {
+    width: 0
 }
 
-.timetable ul.room-timeline li:not(:last-of-type){
-    border-bottom:none
-
+.timetable>section>header li:last-of-type .time-label {
+    transform: translateX(-100%)
 }
 
-.timetable ul.room-timeline li:first-child .time-entry{
-    height:44px
-
+.timetable ul.room-timeline {
+    border-left: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch
 }
 
-.timetable ul.room-timeline li:after,.timetable ul.room-timeline li:before{
-    content:"";
-    position:absolute;
-    z-index:1;
-    left:0;
-    top:0;
-    right:0;
-    bottom:0
+.timetable ul.room-timeline li {
+    position: relative;
+    background-color: #f4f4f4;
+    height: 46px
 }
 
-.timetable ul.room-timeline li:before{
-    background-image:linear-gradient(90deg,#e5e5e5 1px,transparent 0);
-    background-size:24px auto
+.timetable ul.room-timeline li:nth-of-type(odd) {
+    background-color: #fdfdfd
 }
 
-.timetable ul.room-timeline li:after{
-    background-image:linear-gradient(90deg,#e5e5e5,#e5e5e5 1px,#f4f4f4 0,#f4f4f4 2px,#e5e5e5 0,#e5e5e5 3px,transparent 0,transparent);
-    background-size:96px auto;background-position:-2px 0}.timetable .time-entry{background-color:#ec6a5e;
-    transition:background-color .2s;
-    height:45px;
-    display:block;
-    position:absolute;
-    z-index:2;
-    padding:0 10px;
-    white-space:normal;
-    overflow:hidden;
-    color:#fff;
-    border:1px solid #e32c1b;
-    transform-style:preserve-3d
-
+.timetable ul.room-timeline li:first-of-type {
+    border-top: 1px solid #e5e5e5
 }
 
-.timetable .time-entry small{
-    position:relative;
-    top:50%;
-    transform:translateY(-50%);
-    display:block}.timetable .time-entry:hover{background-color:#e74030
+.timetable ul.room-timeline li:last-of-type {
+    border-bottom: 1px solid #e5e5e5
 }
 
-.time-entry.OffloadCrew{
+.timetable ul.room-timeline li:not(:last-of-type) {
+    border-bottom: none
+}
+
+.timetable ul.room-timeline li:first-child .time-entry {
+    height: 44px
+}
+
+.timetable ul.room-timeline li:after,
+.timetable ul.room-timeline li:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0
+}
+
+.timetable ul.room-timeline li:before {
+    background-image: linear-gradient(90deg, #e5e5e5 1px, transparent 0);
+    background-size: 24px auto
+}
+
+.timetable ul.room-timeline li:after {
+    background-image: linear-gradient(90deg, #e5e5e5, #e5e5e5 1px, #f4f4f4 0, #f4f4f4 2px, #e5e5e5 0, #e5e5e5 3px, transparent 0, transparent);
+    background-size: 96px auto;
+    background-position: -2px 0
+}
+
+.timetable .time-entry {
+    background-color: #ec6a5e;
+    transition: background-color .2s;
+    height: 45px;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    padding: 0 10px;
+    white-space: normal;
+    overflow: hidden;
+    color: #fff;
+    border: 1px solid #e32c1b;
+    transform-style: preserve-3d
+}
+
+.timetable .time-entry small {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block
+}
+
+.timetable .time-entry:hover {
+    background-color: #e74030
+}
+
+.time-entry.OffloadCrew {
     background-color: green;
     border: solid 1px green;
     opacity: 0.70;
@@ -191,7 +208,7 @@
     font-weight: bolder;
 }
 
-.time-entry.HVTCrew{
+.time-entry.HVTCrew {
     background-color: blue;
     border: solid 1px blue;
     opacity: 0.70;
@@ -200,7 +217,7 @@
     font-weight: bolder;
 }
 
-.time-entry.GroutCrew{
+.time-entry.GroutCrew {
     background-color: brown;
     border: solid 1px brown;
     opacity: 0.70;
@@ -209,7 +226,7 @@
     font-weight: bolder;
 }
 
-.time-entry.RebarCrew{
+.time-entry.RebarCrew {
     background-color: rebeccapurple;
     border: solid 1px rebeccapurple;
     opacity: 0.70;
@@ -218,7 +235,7 @@
     font-weight: bolder;
 }
 
-.time-entry.CivilCrew{
+.time-entry.CivilCrew {
     background-color: orange;
     border: solid 1px orange;
     opacity: 0.70;
@@ -227,7 +244,7 @@
     font-weight: bolder;
 }
 
-.time-entry.TorqueCrew{
+.time-entry.TorqueCrew {
     background-color: red;
     border: solid 1px red;
     opacity: 0.70;
@@ -238,20 +255,19 @@
 
 /* Format for Modal */
 
-#deleteBtn{
+#deleteBtn {
     background-color: red;
     border: solid 1px red;
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
-.itemlist{
+.itemlist {
     font-size: 14px;
 }
 
-ul{
+ul {
     padding: 0;
 }
-
