@@ -271,3 +271,5 @@ h1 {
 ul {
     padding: 0;
 }
+
+#ModalAlerts {color:red; font-weight: 700;}
