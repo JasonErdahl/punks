@@ -64,13 +64,18 @@ $(document).ready(function () {
         onClick: function (event) {
 
           currentId = event.options.data.id;
-
+          console.log(event);
+          console.log("start:"+convert2(event.startDate));
+          console.log("end:"+convert2(event.endDate));
           //Get the events info to populate the modal
           $("#crewNameModal").text(event.name);
           $("#turbineSiteModal").text(event.location);
           $("#startTimeModal").text(event.startDate);
           $("#endTimeModal").text(event.endDate);
-
+          $('#crewName option[value="'+event.name+'"]').attr("selected", "selected");
+          $('#turbineSite option[value="'+event.location+'"]').attr("selected", "selected");
+          $('#startTime option[value="'+convert2(event.startDate)+'"]').attr("selected", "selected");
+          $('#endTime option[value="'+convert2(event.endDate)+'"]').attr("selected", "selected");
           $("#crewPlanModal").modal();
         },
         class: crewArray[i].replace(/\s+/g, ''),
@@ -101,7 +106,7 @@ $(document).ready(function () {
       url: "/api/crewPlan/" + currentId
     }).then(() => {
       location.reload();
-      getCrewPlans()
+      getCrewPlans();
     });
   }
 
@@ -116,6 +121,13 @@ $(document).ready(function () {
       location.reload();
       getCrewPlans();
     });
+  }
+
+  function convert2(str) {
+    var date = new Date(str),
+        hours = (date.getHours()),
+        minutes  = ("0" + date.getMinutes()).slice(-2);
+    return [ hours, minutes ].join(":");
   }
 
   //Listening to delete button event in modal
@@ -136,6 +148,30 @@ $(document).ready(function () {
       startTime: StartTime.val(),
       endTime: EndTime.val(),
     };
+
+    var startTemp = new Date("August 23, 2010 " + updatedCrewPlan.startTime);
+    startTemp = startTemp.getTime();
+    var endTemp = new Date("August 23, 2010 " + updatedCrewPlan.endTime);
+    endTemp = endTemp.getTime();
+
+    $('#ModalAlerts').empty();
+
+    if (updatedCrewPlan.turbineNumber === null) {
+        $('#ModalAlerts').text('Choose turbine site!');
+        return;
+    } else if (updatedCrewPlan.crewName === null) {
+        $('#ModalAlerts').text('Choose crew name!');
+        return;
+    } else if (updatedCrewPlan.startTime === null) {
+        $('#ModalAlerts').text('Choose start time!');
+        return;
+    } else if (updatedCrewPlan.endTime === null) {
+        $('#ModalAlerts').text('Choose end time!');
+        return;
+    } else if (startTemp >= endTemp) {
+        $('#ModalAlerts').text('ERROR: End time is earlier or the same as the start time!');
+        return;
+    }   
 
     updateCrewPlan(updatedCrewPlan)
   });
