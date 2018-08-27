@@ -2075,6 +2075,10 @@ body.InputPageWrapper {
 	background-color: rgba(211, 211, 211, 0.3);
 }
 
+.InputPageWrapper .card.cardInputNav {
+	border: 0px solid transparent;
+}
+
 .InputPageWrapper .card-heading,
 .InputPageWrapper .card-body {
 	color: #fff;
