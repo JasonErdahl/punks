@@ -2044,12 +2044,24 @@ body.InputPageWrapper {
 	color: red;
 }
 
+.txtSandyBrown {
+	color:sandybrown;
+}
+
+.txtYellow {
+	color:yellow;
+}
+
 .txtBlue {
 	color: #17a2b8;
 }
 
 .txtBold {
-	font-weight: 700;
+	font-weight: 500;
+}
+
+.txtFontSize1_2 {
+	font-size:1.2rem;
 }
 
 .InputPageWrapper .inputPageUL {
@@ -2082,10 +2094,6 @@ body.InputPageWrapper {
 .InputPageWrapper .card-heading,
 .InputPageWrapper .card-body {
 	color: #fff;
-}
-
-.InputPageWrapper #weatherWrapper .card-body {
-	/* text-shadow: 2px 2px #17a2b8; */
 }
 
 @media (min-width: 980px) {
