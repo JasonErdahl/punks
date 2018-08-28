@@ -34,6 +34,8 @@ $(document).ready(function () {
     //Helper Function to post new data to the database
     function insertCrewPlan(event) {
         event.preventDefault();
+        
+        $("#inputStatus").empty();
 
         var crewplan = {
             turbineNumber: TurbineSite.val(),
@@ -49,25 +51,26 @@ $(document).ready(function () {
         endTemp = endTemp.getTime();
 
         if (crewplan.turbineNumber === null) {
-            alert('Choose turbine site!');
+            $("#inputStatus").text("Choose turbine site!");
             return;
         } else if (crewplan.crewName === null) {
-            alert('Choose crew name!');
+            $("#inputStatus").text("Choose crew name!");
             return;
         } else if (crewplan.startTime === null) {
-            alert('Choose start time!');
+            $("#inputStatus").text("Choose start time!");
             return;
         } else if (crewplan.endTime === null) {
-            alert('Choose end time!');
+            $("#inputStatus").text("Choose end time!");
             return;
         } else if (startTemp >= endTemp) {
-            alert('End time is earlier or the same as the start time!');
+            $("#inputStatus").text("End time is earlier or the same as the start time!");
             return;
         } else if (crewplan.date === '') {
-            alert('Choose todays date!');
+            $("#inputStatus").text("Choose todays date!");
             return;
         }
 
+        $("#inputStatus").text("Submission was successful.");
         //Make ajax call to post to the database
         $.post("/api/crewPlan", crewplan);
         clearInputFields();
