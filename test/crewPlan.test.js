@@ -11,19 +11,19 @@ var request;
 
 describe("GET /api/crewPlan", function() {
   // Before each test begins, create a new request server for testing
-  // & delete all examples from the db
+  // & delete all crew plans from the db
   beforeEach(function() {
     request = chai.request(server);
     return db.sequelize.sync({ force: true });
   });
 
-  it("should find all examples", function(done) {
-    // Add some examples to the db to test with
-    db.Example.bulkCreate([
+  it("should find all crew plans", function(done) {
+    // Add some crew plans to the db to test with
+    db.CrewPlan.bulkCreate([
       { turbineNumber: "Turbine Site 1", crewName: "TorqueCrew", startTime: "1:30", endTime: "2:30", date: "2018-08-28"},
       { turbineNumber: "Turbine Site 1", crewName: "RebarCrew", startTime: "2:15", endTime: "3:15", date: "2018-08-28"}
     ]).then(function() {
-      // Request the route that returns all examples
+      // Request the route that returns all crew plans
       request.get("/api/crewPlan").end(function(err, res) {
         var responseStatus = res.status;
         var responseBody = res.body;
