@@ -160,11 +160,10 @@ function displayWeather(location) {
         $('#weatherWrapper').append(htmlElements);
 
         $(".displayGustWarning").css("display", "none");
-        if ((currentWindGust >= 10) && (isNaN(currentWindGust))) {
+        if ((currentWindGust >= 20) && (isInteger(currentWindGust))) {
             console.log("wind gust warning");
             $(".displayGustWarning").css("display", "block");
-        }
-        if (isNaN(currentWindGust)) {
+        } else if (isNaN(currentWindGust)) {
             console.log("wind gust missing");
             $(".displayGust").css("display", "none");
         }
